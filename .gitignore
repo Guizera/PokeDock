@@ -1,0 +1,3 @@
+# O site tem seu próprio repositório e pipeline de deploy.
+pokedock/
+dist/releases/

@@ -6,27 +6,38 @@
 //
 
 import SwiftUI
-import SwiftData
+import Sparkle
 
 @main
 struct pokeTabApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    private let updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
 
     var body: some Scene {
-        WindowGroup {
+        WindowGroup(id: "pokedex") {
             ContentView()
+                .frame(minWidth: 820, minHeight: 620)
         }
-        .modelContainer(sharedModelContainer)
+        .windowResizability(.contentMinSize)
+        .commands {
+            CommandGroup(after: .appInfo) {
+                CheckForUpdatesView(updater: updaterController.updater)
+            }
+        }
+
+        Window("Personalizar Dock", id: "dock-editor") {
+            DockEditorView()
+        }
+        .defaultSize(width: 860, height: 760)
+
+        Window("Finanças", id: "finance") {
+            FinanceView()
+        }
+        .defaultSize(width: 650, height: 650)
+
+        Window("Produtividade", id: "productivity") {
+            ProductivityView()
+        }
+        .defaultSize(width: 600, height: 700)
     }
 }
