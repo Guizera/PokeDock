@@ -78,6 +78,7 @@ enum DockWidgetKind: String, CaseIterable, Codable, Identifiable {
     case focus
     case tasks
     case notes
+    case arcade
 
     var id: String { rawValue }
     var title: String {
@@ -92,6 +93,7 @@ enum DockWidgetKind: String, CaseIterable, Codable, Identifiable {
         case .focus: NSLocalizedString("Foco", comment: "Focus widget")
         case .tasks: NSLocalizedString("Tarefas", comment: "Tasks widget")
         case .notes: NSLocalizedString("Notas rápidas", comment: "Quick notes widget")
+        case .arcade: NSLocalizedString("Arcade retrô", comment: "Retro arcade widget")
         }
     }
     var symbol: String {
@@ -106,6 +108,7 @@ enum DockWidgetKind: String, CaseIterable, Codable, Identifiable {
         case .focus: "timer"
         case .tasks: "checklist"
         case .notes: "note.text"
+        case .arcade: "gamecontroller.fill"
         }
     }
 }
@@ -622,6 +625,7 @@ struct DockWidgetView: View {
             case .focus: FocusDockWidgetView(isPreview: isPreview)
             case .tasks: TasksDockWidgetView(isPreview: isPreview)
             case .notes: NotesDockWidgetView(isPreview: isPreview)
+            case .arcade: RetroArcadeDockWidgetView(isPreview: isPreview)
             case .clock, .pokedex, .encounter: basicWidget
             }
         }
@@ -630,12 +634,9 @@ struct DockWidgetView: View {
     private var basicWidget: some View {
         Button {
             guard !isPreview else { return }
+            guard kind != .encounter else { return }
             NSApp.activate(ignoringOtherApps: true)
-            if kind == .encounter, game.currentEncounter != nil {
-                AppDelegate.shared?.showEncounter()
-            } else {
-                openWindow(id: "pokedex")
-            }
+            openWindow(id: "pokedex")
         } label: {
             TimelineView(.periodic(from: .now, by: 30)) { context in
                 HStack(spacing: 7) {

@@ -117,10 +117,6 @@ struct ContentView: View {
             Text("POKÉTAB")
                 .font(.system(size: 20, weight: .black, design: .monospaced))
                 .tracking(2)
-            if game.currentEncounter != nil {
-                Button("ABRIR ENCONTRO", systemImage: "sparkles") { AppDelegate.shared?.showEncounter() }
-                    .buttonStyle(GameBoyActionStyle(primary: true))
-            }
             Spacer()
             VStack(alignment: .trailing, spacing: 2) {
                 Text("\(game.pokeballs)/\(GameController.maximumPokeballs) POKÉBOLAS")
@@ -231,7 +227,6 @@ private struct SettingsView: View {
             Button("Simular um encontro agora") {
                 game.simulateEncounter()
                 dismiss()
-                AppDelegate.shared?.showEncounter()
             }
             .disabled(game.isPaused)
             #endif

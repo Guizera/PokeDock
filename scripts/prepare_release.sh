@@ -14,10 +14,18 @@ if [[ ! -f $dmg || ! -x $generate_appcast ]]; then
     exit 2
 fi
 
+if ! codesign --verify --strict "$dmg" || ! xcrun stapler validate "$dmg"; then
+    echo "Assine e notarize o DMG antes de gerar o appcast." >&2
+    exit 1
+fi
+
 project_root=$(cd "$(dirname "$0")/.." && pwd)
 release_dir=${POKEDOCK_RELEASE_DIR:-"$project_root/dist/releases/v$version"}
 mkdir -p "$release_dir"
-cp "$dmg" "$release_dir/PokeDock.dmg"
+release_dmg="$release_dir/PokeDock.dmg"
+if [[ ! -e $release_dmg || ! $dmg -ef $release_dmg ]]; then
+    cp "$dmg" "$release_dmg"
+fi
 
 "$generate_appcast" \
     --account com.guilhermecunha.pokeTab \

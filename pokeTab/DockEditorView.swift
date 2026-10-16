@@ -122,6 +122,7 @@ struct DockEditorView: View {
                                 Section("Música") { widgetOptions([.spotify, .appleMusic]) }
                                 Section("Finanças") { widgetOptions([.dollar, .budget]) }
                                 Section("Produtividade") { widgetOptions([.focus, .tasks, .notes]) }
+                                Section("Diversão") { widgetOptions([.arcade]) }
                             }
                         }
                         if dock.items.isEmpty {
@@ -191,9 +192,15 @@ struct DockEditorView: View {
                     .foregroundStyle(GameBoyPalette.mid)
             }
             Spacer()
-            if let kind = item.widgetKind, [.budget, .focus, .tasks, .notes].contains(kind) {
+            if let kind = item.widgetKind, [.budget, .focus, .tasks, .notes, .arcade].contains(kind) {
                 Button("Abrir painel", systemImage: "arrow.up.right.square") {
-                    openWindow(id: kind == .budget ? "finance" : "productivity")
+                    if kind == .budget {
+                        openWindow(id: "finance")
+                    } else if kind == .arcade {
+                        openWindow(id: "retro-arcade")
+                    } else {
+                        openWindow(id: "productivity")
+                    }
                 }
                 .labelStyle(.iconOnly)
                 .help("Abrir \(kind.title)")

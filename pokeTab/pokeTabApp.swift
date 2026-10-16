@@ -39,5 +39,11 @@ struct pokeTabApp: App {
             ProductivityView()
         }
         .defaultSize(width: 600, height: 700)
+
+        Window("Arcade retrô", id: "retro-arcade") {
+            RetroArcadeView()
+        }
+        .defaultSize(width: 520, height: 580)
+        .windowResizability(.contentSize)
     }
 }

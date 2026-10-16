@@ -1,72 +1,60 @@
 {
-  "sourceLanguage": "pt-BR",
-  "strings": {
-    "CFBundleDisplayName": {
-      "comment": "Bundle display name",
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Poke Dock"
+  "sourceLanguage" : "pt-BR",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poke Dock"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Poke Dock"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Poke Dock"
           }
         }
       }
     },
-    "CFBundleName": {
-      "comment": "Bundle name",
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "pokeTab"
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pokeTab"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "new",
-            "value": "pokeTab"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "pokeTab"
           }
         }
       }
     },
-    "NSAppleEventsUsageDescription": {
-      "comment": "Privacy - AppleEvents Sending Usage Description",
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "PokeDock uses Automation to control music widgets, automatically hide the macOS Dock, and open Trash in Finder."
+    "NSAppleEventsUsageDescription" : {
+      "comment" : "Privacy - AppleEvents Sending Usage Description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PokeDock uses Automation to control music widgets, automatically hide the macOS Dock, and open Trash in Finder."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "new",
-            "value": "O PokeDock usa Automação para controlar os widgets de música, ocultar automaticamente a Dock do macOS e abrir a Lixeira no Finder."
-          }
-        }
-      }
-    },
-    "NSHumanReadableCopyright": {
-      "comment": "Copyright (human-readable)",
-      "extractionState": "extracted_with_value",
-      "localizations": {
-        "pt-BR": {
-          "stringUnit": {
-            "state": "new",
-            "value": ""
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "O PokeDock usa Automação para controlar os widgets de música, ocultar automaticamente a Dock do macOS e abrir a Lixeira no Finder."
           }
         }
       }
     }
   },
-  "version": "1.3"
+  "version" : "1.3"
 }

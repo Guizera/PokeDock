@@ -15,6 +15,8 @@ enum MusicProvider: String, CaseIterable, Identifiable {
 struct MusicSnapshot {
     var track = ""
     var artist = ""
+    var album = ""
+    var artworkURL: URL?
     var isPlaying = false
     var message: String?
 }
@@ -43,6 +45,19 @@ final class MusicController: ObservableObject {
             return
         }
         pending.insert(provider)
+        let trackDetails = switch provider {
+        case .spotify:
+            """
+            set albumName to album of current track as text
+            set coverURL to artwork url of current track as text
+            return playbackState & linefeed & songName & linefeed & artistName & linefeed & albumName & linefeed & coverURL
+            """
+        case .appleMusic:
+            """
+            set albumName to album of current track as text
+            return playbackState & linefeed & songName & linefeed & artistName & linefeed & albumName & linefeed
+            """
+        }
         let source = """
         tell application id "\(provider.bundleID)"
             set playbackState to player state as text
@@ -50,7 +65,7 @@ final class MusicController: ObservableObject {
             try
                 set songName to name of current track as text
                 set artistName to artist of current track as text
-                return playbackState & linefeed & songName & linefeed & artistName
+                \(trackDetails)
             on error
                 return playbackState
             end try
@@ -80,6 +95,8 @@ final class MusicController: ObservableObject {
             snapshots[provider] = MusicSnapshot(
                 track: parts.count > 1 ? parts[1] : "",
                 artist: parts.count > 2 ? parts[2] : "",
+                album: parts.count > 3 ? parts[3] : "",
+                artworkURL: parts.count > 4 ? URL(string: parts[4]) : nil,
                 isPlaying: parts.first == "playing",
                 message: parts.first == "stopped" ? NSLocalizedString("Nada tocando", comment: "Nothing playing") : nil
             )
@@ -144,32 +161,41 @@ struct MusicDockWidgetView: View {
     private var snapshot: MusicSnapshot { music.snapshots[provider] ?? MusicSnapshot(message: NSLocalizedString("Nada tocando", comment: "Nothing playing")) }
 
     var body: some View {
-        HStack(spacing: 8) {
-            Image(systemName: provider.symbol)
-                .font(.title2)
-                .frame(width: 25)
+        HStack(spacing: 9) {
+            MusicArtworkView(provider: provider, snapshot: snapshot)
+
             VStack(alignment: .leading, spacing: 3) {
-                Text(provider.title).font(.caption2.bold()).opacity(0.8)
                 if !isRunning {
-                    Button("Abrir app") { openProvider() }
-                        .disabled(isPreview)
+                    widgetTitle
+                    actionButton("Abrir app") { openProvider() }
                 } else if !music.connected.contains(provider) {
-                    Button("Conectar") { music.connect(provider) }
-                        .disabled(isPreview)
-                } else {
-                    Text(snapshot.track.isEmpty ? (snapshot.message ?? NSLocalizedString("Nada tocando", comment: "Nothing playing")) : snapshot.track)
-                        .font(.caption.weight(.semibold))
+                    widgetTitle
+                    actionButton("Conectar") { music.connect(provider) }
+                } else if snapshot.track.isEmpty {
+                    widgetTitle
+                    Text(snapshot.message ?? NSLocalizedString("Nada tocando", comment: "Nothing playing"))
+                        .font(.system(size: 10, weight: .semibold))
                         .lineLimit(1)
-                    HStack(spacing: 12) {
+                        .opacity(0.78)
+                } else {
+                    Text(snapshot.track)
+                        .font(.system(size: 11, weight: .bold))
+                        .lineLimit(1)
+                    HStack(spacing: 4) {
+                        Text(snapshot.artist)
+                            .font(.system(size: 9, weight: .medium))
+                            .lineLimit(1)
+                            .opacity(0.72)
+                        Spacer(minLength: 2)
                         control("backward.fill", .previous)
-                        control(snapshot.isPlaying ? "pause.fill" : "play.fill", .playPause)
+                        control(snapshot.isPlaying ? "pause.fill" : "play.fill", .playPause, prominent: true)
                         control("forward.fill", .next)
                     }
                 }
             }
-            .frame(width: 128, alignment: .leading)
+            .frame(width: 158, alignment: .leading)
         }
-        .padding(.horizontal, 10)
+        .padding(.horizontal, 8)
         .frame(height: DockMetrics.itemHeight)
         .background(.white.opacity(0.12), in: RoundedRectangle(cornerRadius: 15))
         .help(snapshot.track.isEmpty
@@ -181,9 +207,35 @@ struct MusicDockWidgetView: View {
         }
     }
 
-    private func control(_ symbol: String, _ command: MusicCommand) -> some View {
+    private var widgetTitle: some View {
+        HStack(spacing: 4) {
+            Circle()
+                .fill(provider == .spotify ? Color(red: 0.12, green: 0.84, blue: 0.38) : Color.pink)
+                .frame(width: 6, height: 6)
+            Text(provider.title)
+                .font(.system(size: 10, weight: .bold))
+                .opacity(0.82)
+        }
+    }
+
+    private func actionButton(_ title: LocalizedStringKey, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Text(title)
+                .font(.system(size: 10, weight: .bold))
+                .padding(.horizontal, 8)
+                .frame(height: 20)
+                .background(.white.opacity(0.16), in: Capsule())
+        }
+        .buttonStyle(.plain)
+        .disabled(isPreview)
+    }
+
+    private func control(_ symbol: String, _ command: MusicCommand, prominent: Bool = false) -> some View {
         Button { music.command(command, for: provider) } label: {
-            Image(systemName: symbol).frame(width: 20, height: 18)
+            Image(systemName: symbol)
+                .font(.system(size: prominent ? 9 : 8, weight: .bold))
+                .frame(width: prominent ? 20 : 17, height: 17)
+                .background(.white.opacity(prominent ? 0.24 : 0.10), in: Circle())
         }
         .buttonStyle(.plain)
         .disabled(isPreview)
@@ -192,5 +244,46 @@ struct MusicDockWidgetView: View {
     private func openProvider() {
         guard let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: provider.bundleID) else { return }
         NSWorkspace.shared.openApplication(at: url, configuration: NSWorkspace.OpenConfiguration())
+    }
+}
+
+private struct MusicArtworkView: View {
+    let provider: MusicProvider
+    let snapshot: MusicSnapshot
+
+    var body: some View {
+        Group {
+            if let url = snapshot.artworkURL {
+                AsyncImage(url: url) { phase in
+                    if let image = phase.image {
+                        image.resizable().scaledToFill()
+                    } else {
+                        placeholder
+                    }
+                }
+            } else {
+                placeholder
+            }
+        }
+        .frame(width: 38, height: 38)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(.white.opacity(0.28), lineWidth: 1))
+        .shadow(color: .black.opacity(0.2), radius: 3, y: 2)
+        .accessibilityHidden(true)
+    }
+
+    private var placeholder: some View {
+        ZStack {
+            LinearGradient(
+                colors: provider == .spotify
+                    ? [Color(red: 0.08, green: 0.72, blue: 0.31), Color(red: 0.03, green: 0.22, blue: 0.12)]
+                    : [Color.pink, Color.purple],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            Image(systemName: provider.symbol)
+                .font(.system(size: 17, weight: .bold))
+                .foregroundStyle(.white)
+        }
     }
 }

@@ -20,25 +20,21 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidChangeScreenParameters(_ notification: Notification) {
         positionCustomDock()
-    }
-
-    func applicationDidBecomeActive(_ notification: Notification) {
-        if game.currentEncounter != nil { showEncounter() }
+        if let encounterPanel { positionEncounter(encounterPanel) }
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        if game.currentEncounter != nil {
-            showEncounter()
-            return false
-        }
         return true
     }
 
     func showEncounter() {
         guard game.currentEncounter != nil else { return }
         game.markCurrentEncounterSeen()
+        NSApp.activate(ignoringOtherApps: true)
         if let encounterPanel {
+            positionEncounter(encounterPanel)
             encounterPanel.makeKeyAndOrderFront(nil)
+            encounterPanel.orderFrontRegardless()
             return
         }
         let panel = NSPanel(
@@ -52,10 +48,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         panel.titleVisibility = .hidden
         panel.isReleasedWhenClosed = false
         panel.level = .floating
+        panel.collectionBehavior = [.moveToActiveSpace, .fullScreenAuxiliary]
         panel.contentView = NSHostingView(rootView: EncounterView(game: game) { [weak self] in
             self?.encounterPanel?.close()
             self?.encounterPanel = nil
         })
+        positionEncounter(panel)
+        encounterPanel = panel
+        panel.makeKeyAndOrderFront(nil)
+        panel.orderFrontRegardless()
+    }
+
+    private func positionEncounter(_ panel: NSPanel) {
         let mouse = NSEvent.mouseLocation
         let screen = NSScreen.screens.first { $0.frame.contains(mouse) } ?? NSScreen.main
         if let screen {
@@ -64,8 +68,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
             panel.center()
         }
-        encounterPanel = panel
-        panel.makeKeyAndOrderFront(nil)
     }
 
     func syncCustomDock() {

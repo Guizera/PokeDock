@@ -4,104 +4,8 @@
     "" : {
 
     },
-    "Abrir ao iniciar sessão" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open at login"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abrir ao iniciar sessão"
-          }
-        }
-      }
-    },
-    "Autorizar nos Ajustes do Sistema" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Allow in System Settings"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Autorizar nos Ajustes do Sistema"
-          }
-        }
-      }
-    },
-    "Próximo encontro em cerca de 45 a 70 minutos" : {
-      "comment" : "Calm encounter frequency",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next encounter in about 45 to 70 minutes"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Próximo encontro em cerca de 45 a 70 minutos"
-          }
-        }
-      }
-    },
-    "Próximo encontro em cerca de 20 a 35 minutos" : {
-      "comment" : "Normal encounter frequency",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next encounter in about 20 to 35 minutes"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Próximo encontro em cerca de 20 a 35 minutos"
-          }
-        }
-      }
-    },
-    "Próximo encontro em cerca de 10 a 20 minutos" : {
-      "comment" : "Lively encounter frequency",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next encounter in about 10 to 20 minutes"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Próximo encontro em cerca de 10 a 20 minutos"
-          }
-        }
-      }
-    },
-    "Verificar atualizações…" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Check for Updates…"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verificar atualizações…"
-          }
-        }
-      }
+    "?" : {
+
     },
     "%@ — %@" : {
       "localizations" : {
@@ -249,6 +153,23 @@
         }
       }
     },
+    "1. Faça um dump legal do seu cartucho.\n2. Clique em IMPORTAR ROM.\n3. Selecione o arquivo %@.\nA ROM fica somente neste Mac." : {
+      "comment" : "ROM import instructions",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Make a legal dump of your cartridge.\n2. Click IMPORT ROM.\n3. Select the %@ file.\nThe ROM stays on this Mac."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Faça um dump legal do seu cartucho.\n2. Clique em IMPORTAR ROM.\n3. Selecione o arquivo %@.\nA ROM fica somente neste Mac."
+          }
+        }
+      }
+    },
     "25 min" : {
       "localizations" : {
         "en" : {
@@ -346,6 +267,22 @@
         }
       }
     },
+    "Abrir ao iniciar sessão" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open at login"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir ao iniciar sessão"
+          }
+        }
+      }
+    },
     "Abrir app" : {
       "localizations" : {
         "en" : {
@@ -362,7 +299,24 @@
         }
       }
     },
+    "Abrir arcade retrô" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Retro Arcade"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir arcade retrô"
+          }
+        }
+      }
+    },
     "ABRIR ENCONTRO" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -640,6 +594,38 @@
         }
       }
     },
+    "APERTE JOGAR" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRESS PLAY"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "APERTE JOGAR"
+          }
+        }
+      }
+    },
+    "APERTE NOVO JOGO" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRESS NEW GAME"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "APERTE NOVO JOGO"
+          }
+        }
+      }
+    },
     "Aplicativo" : {
       "comment" : "App fallback name",
       "localizations" : {
@@ -657,6 +643,26 @@
         }
       }
     },
+    "ARCADE" : {
+
+    },
+    "Arcade retrô" : {
+      "comment" : "Retro arcade widget",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retro Arcade"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arcade retrô"
+          }
+        }
+      }
+    },
     "Atalho do Finder" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -670,6 +676,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Atalho do Finder"
+          }
+        }
+      }
+    },
+    "Autorizar nos Ajustes do Sistema" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allow in System Settings"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autorizar nos Ajustes do Sistema"
           }
         }
       }
@@ -852,6 +874,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carregando…"
+          }
+        }
+      }
+    },
+    "CLIQUE NAS CARTAS" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CLICK THE CARDS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CLIQUE NAS CARTAS"
+          }
+        }
+      }
+    },
+    "Cobrinha" : {
+      "comment" : "Retro arcade snake game",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snake"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cobrinha"
           }
         }
       }
@@ -1118,6 +1173,22 @@
         }
       }
     },
+    "Diversão" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fun"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diversão"
+          }
+        }
+      }
+    },
     "DOCK" : {
       "localizations" : {
         "en" : {
@@ -1234,6 +1305,40 @@
         }
       }
     },
+    "Emulador disponível • ROM fornecida pelo usuário" : {
+      "comment" : "User supplied ROM note",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emulator ready • user-supplied ROM"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emulador disponível • ROM fornecida pelo usuário"
+          }
+        }
+      }
+    },
+    "EmulatorJS • internet na primeira carga" : {
+      "comment" : "Emulator internet requirement",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EmulatorJS • internet required on first load"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EmulatorJS • internet na primeira carga"
+          }
+        }
+      }
+    },
     "Encerrar app" : {
       "localizations" : {
         "en" : {
@@ -1246,6 +1351,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Encerrar app"
+          }
+        }
+      }
+    },
+    "ENCONTRE OS PARES" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MATCH THE PAIRS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENCONTRE OS PARES"
           }
         }
       }
@@ -1432,6 +1553,22 @@
         }
       }
     },
+    "FIM DE JOGO" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GAME OVER"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIM DE JOGO"
+          }
+        }
+      }
+    },
     "Finanças" : {
       "comment" : "Finance widget",
       "localizations" : {
@@ -1597,6 +1734,57 @@
         }
       }
     },
+    "Importar" : {
+      "comment" : "Import ROM button",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importar"
+          }
+        }
+      }
+    },
+    "IMPORTAR ROM" : {
+      "comment" : "Import ROM arcade button",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IMPORT ROM"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IMPORTAR ROM"
+          }
+        }
+      }
+    },
+    "Importar ROM de %@" : {
+      "comment" : "ROM import panel title",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import %@ ROM"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importar ROM de %@"
+          }
+        }
+      }
+    },
     "Incomum" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1659,6 +1847,88 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Itens da barra"
+          }
+        }
+      }
+    },
+    "JOGADAS %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MOVES %lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JOGADAS %lld"
+          }
+        }
+      }
+    },
+    "JOGANDO" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PLAYING"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JOGANDO"
+          }
+        }
+      }
+    },
+    "JOGAR" : {
+      "comment" : "Play emulator button",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PLAY"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JOGAR"
+          }
+        }
+      }
+    },
+    "Jogo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Game"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jogo"
+          }
+        }
+      }
+    },
+    "Jogos originais • nenhuma ROM necessária" : {
+      "comment" : "Original arcade games note",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Original games • no ROMs required"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jogos originais • nenhuma ROM necessária"
           }
         }
       }
@@ -1742,6 +2012,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lixeira"
+          }
+        }
+      }
+    },
+    "Memória" : {
+      "comment" : "Retro arcade memory game",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memory"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memória"
           }
         }
       }
@@ -1857,6 +2144,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Não foi possível alterar a Dock do macOS. Permita a Automação para Eventos do Sistema ou ative a ocultação em Ajustes do Sistema → Mesa e Dock."
+          }
+        }
+      }
+    },
+    "Não foi possível importar" : {
+      "comment" : "ROM import error alert title",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn’t import ROM"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível importar"
           }
         }
       }
@@ -2009,6 +2313,22 @@
         }
       }
     },
+    "NOVO JOGO" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NEW GAME"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NOVO JOGO"
+          }
+        }
+      }
+    },
     "O ajuste Reduzir Movimento do macOS também pausa os efeitos." : {
       "localizations" : {
         "en" : {
@@ -2021,6 +2341,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "O ajuste Reduzir Movimento do macOS também pausa os efeitos."
+          }
+        }
+      }
+    },
+    "O arquivo não parece ser uma ROM compatível com %@." : {
+      "comment" : "Incompatible imported ROM error",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This file doesn’t appear to be a ROM compatible with %@."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O arquivo não parece ser uma ROM compatível com %@."
           }
         }
       }
@@ -2109,6 +2446,9 @@
           }
         }
       }
+    },
+    "OK" : {
+
     },
     "Ondas suaves" : {
       "comment" : "Ocean theme subtitle",
@@ -2206,6 +2546,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pausar"
+          }
+        }
+      }
+    },
+    "PAUSAR" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PAUSE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PAUSAR"
           }
         }
       }
@@ -2324,6 +2680,9 @@
         }
       }
     },
+    "POKEDOCK" : {
+
+    },
     "Pokémon e relógio" : {
       "localizations" : {
         "en" : {
@@ -2371,6 +2730,25 @@
           }
         }
       }
+    },
+    "PONTOS %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SCORE %lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PONTOS %lld"
+          }
+        }
+      }
+    },
+    "POWER" : {
+
     },
     "Pradaria" : {
       "extractionState" : "stale",
@@ -2422,6 +2800,22 @@
         }
       }
     },
+    "PRONTO" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "READY"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRONTO"
+          }
+        }
+      }
+    },
     "PRÓXIMO %@" : {
       "localizations" : {
         "en" : {
@@ -2451,6 +2845,57 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Próximo encontro"
+          }
+        }
+      }
+    },
+    "Próximo encontro em cerca de 10 a 20 minutos" : {
+      "comment" : "Lively encounter frequency",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next encounter in about 10 to 20 minutes"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximo encontro em cerca de 10 a 20 minutos"
+          }
+        }
+      }
+    },
+    "Próximo encontro em cerca de 20 a 35 minutos" : {
+      "comment" : "Normal encounter frequency",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next encounter in about 20 to 35 minutes"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximo encontro em cerca de 20 a 35 minutos"
+          }
+        }
+      }
+    },
+    "Próximo encontro em cerca de 45 a 70 minutos" : {
+      "comment" : "Calm encounter frequency",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next encounter in about 45 to 70 minutes"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximo encontro em cerca de 45 a 70 minutos"
           }
         }
       }
@@ -2671,6 +3116,9 @@
         }
       }
     },
+    "RETRO ARCADE" : {
+
+    },
     "Saldo do orçamento mensal. Toque para registrar despesas." : {
       "localizations" : {
         "en" : {
@@ -2699,6 +3147,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Salvar limite"
+          }
+        }
+      }
+    },
+    "Selecione uma cópia própria nos formatos: %@." : {
+      "comment" : "ROM import panel help",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select your own copy in one of these formats: %@."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecione uma cópia própria nos formatos: %@."
           }
         }
       }
@@ -2853,6 +3318,23 @@
         }
       }
     },
+    "TROCAR ROM" : {
+      "comment" : "Replace ROM arcade button",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REPLACE ROM"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TROCAR ROM"
+          }
+        }
+      }
+    },
     "Última cotação salva" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -2951,6 +3433,22 @@
         }
       }
     },
+    "Verificar atualizações…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check for Updates…"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verificar atualizações…"
+          }
+        }
+      }
+    },
     "VISTO" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -3032,6 +3530,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Você lançou uma Pokébola…"
+          }
+        }
+      }
+    },
+    "VOCÊ VENCEU!" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YOU WIN!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VOCÊ VENCEU!"
+          }
+        }
+      }
+    },
+    "VOLTAR" : {
+      "comment" : "Leave emulator button",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BACK"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VOLTAR"
           }
         }
       }
